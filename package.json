@@ -1,0 +1,26 @@
+{
+  "name": "js2015",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node build/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:client": "node tasks/webpack.js client",
+    "build:server": "node tasks/webpack.js server",
+    "build": "npm run build:client & npm run build:server",
+    "clean": "rm -R build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-react": "^6.0.15",
+    "babel-preset-stage-0": "^6.0.15",
+    "json-loader": "^0.5.3",
+    "webpack": "^1.12.2",
+    "webpack-dev-server": "^1.12.1"
+  },
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
