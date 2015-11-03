@@ -14,6 +14,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "babel-plugin-transform-async-to-generator": "^6.0.14",
+    "babel-plugin-transform-regenerator": "^6.0.18",
+    "babel-polyfill": "^6.0.16",
     "babel-preset-react": "^6.0.15",
     "babel-preset-stage-0": "^6.0.15",
     "json-loader": "^0.5.3",

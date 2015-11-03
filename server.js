@@ -1,4 +1,7 @@
+require("babel-polyfill");
+
 import express from 'express';
+import path from 'path';
 
 const server = express();
 
@@ -8,7 +11,7 @@ server.use(express.static(path.join(__dirname, 'public')));
 server.get('*', async (req, res, next) => {
     try {
         let statusCode = 200;
-        let html = '';
+        let html = 'Yo!';
         res.status(statusCode).send('<!doctype html>\n' + html);
     } catch (err) {
         next(err);
