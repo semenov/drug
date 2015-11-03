@@ -1,4 +1,4 @@
-require("babel-polyfill");
+import polyfill from 'babel-polyfill';
 
 import express from 'express';
 import path from 'path';
