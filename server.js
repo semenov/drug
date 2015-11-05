@@ -2,6 +2,7 @@ import polyfill from 'babel-polyfill';
 
 import express from 'express';
 import path from 'path';
+import {handleRoute} from './router';
 
 const server = express();
 
@@ -10,9 +11,15 @@ server.use(express.static(path.join(__dirname, 'public')));
 
 server.get('*', async (req, res, next) => {
     try {
-        let statusCode = 200;
-        let html = 'Yo!';
-        res.status(statusCode).send('<!doctype html>\n' + html);
+        console.log('req.path', req.path)
+        let result = handleRoute(req.path);
+        if (result) {
+            let statusCode = 200;
+            let html = result;
+            res.status(statusCode).send('<!doctype html>\n' + html);
+        } else {
+            next();
+        }
     } catch (err) {
         next(err);
     }

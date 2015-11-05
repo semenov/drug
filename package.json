@@ -6,11 +6,11 @@
   "scripts": {
     "start": "node build/server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run build:server & npm run build:client",
+    "build": "npm run build:server && npm run build:client",
     "build:client": "node tasks/webpack.js client",
     "build:server": "node tasks/webpack.js server",
     "clean": "rm -R build",
-    "dev": "nodemon --exec npm run build & npm start"
+    "dev": "nodemon --exec npm run build && npm start"
   },
   "author": "",
   "license": "ISC",
