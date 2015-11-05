@@ -1,3 +1,7 @@
+import React from 'react';
+import ReactDOMServer from 'react-dom/server';
+import App from './components/App/App';
+
 export default {
     home: {
         path: '/',
@@ -12,6 +16,14 @@ export default {
         method: 'get',
         handler: () => {
             return 'Hello!';
+        }
+    },
+    app: {
+        path: '/app',
+        method: 'get',
+        handler: () => {
+            var app = new App();
+            return ReactDOMServer.renderToString(app);
         }
     }
 }
