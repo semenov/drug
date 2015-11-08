@@ -21,7 +21,7 @@ server.get('*', async (req, res, next) => {
         console.log('req.path', req.path)
         let result = handleRoute(req.path);
         if (result) {
-            let html = ReactDOMServer.renderToStaticMarkup(<Html body={result} />);
+            let html = ReactDOMServer.renderToStaticMarkup(<Html css='/style.css' body={result} />);
 
             res.send('<!doctype html>\n' + html);
         } else {

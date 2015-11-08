@@ -20,8 +20,12 @@
     "babel-polyfill": "^6.0.16",
     "babel-preset-react": "^6.0.15",
     "babel-preset-stage-0": "^6.0.15",
+    "css-loader": "^0.22.0",
+    "extract-text-webpack-plugin": "^0.9.1",
     "json-loader": "^0.5.3",
     "nodemon": "^1.8.1",
+    "postcss-loader": "^0.7.0",
+    "style-loader": "^0.13.0",
     "webpack": "^1.12.2",
     "webpack-dev-server": "^1.12.1"
   },
