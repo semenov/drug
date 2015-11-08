@@ -18,7 +18,7 @@ module.exports = {
                 exclude: /(node_modules)/,
                 loader: 'babel',
                 query: {
-                    presets: ['es2015', 'stage-0', 'react'],
+                    presets: ['react', 'stage-0', 'es2015'],
                     cacheDirectory: true
                 }
             }

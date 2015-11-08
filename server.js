@@ -6,20 +6,24 @@ install();
 import express from 'express';
 import path from 'path';
 import {handleRoute} from './router';
+import React from 'react';
+import ReactDOMServer from 'react-dom/server';
+import Html from './components/Html/Html';
 
 const server = express();
 
 server.set('port', (process.env.PORT || 3000));
 server.use(express.static(path.join(__dirname, 'public')));
+server.use(express.static(path.join(__dirname, 'build')));
 
 server.get('*', async (req, res, next) => {
     try {
         console.log('req.path', req.path)
         let result = handleRoute(req.path);
         if (result) {
-            let statusCode = 200;
-            let html = result;
-            res.status(statusCode).send('<!doctype html>\n' + html);
+            let html = ReactDOMServer.renderToStaticMarkup(<Html body={result} />);
+
+            res.send('<!doctype html>\n' + html);
         } else {
             next();
         }
