@@ -7,7 +7,7 @@ export default {
         path: '/',
         method: 'get',
         handler: () => {
-            return 'Home';
+            return <div>Home</div>;
         }
     },
 
@@ -15,15 +15,14 @@ export default {
         path: '/hello',
         method: 'get',
         handler: () => {
-            return 'Hello!';
+            return <div>Hello!</div>;
         }
     },
     app: {
         path: '/app',
         method: 'get',
         handler: () => {
-            var app = new App();
-            return ReactDOMServer.renderToString(app);
+            return <App />;
         }
     }
 }

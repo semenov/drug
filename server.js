@@ -21,7 +21,10 @@ server.get('*', async (req, res, next) => {
         console.log('req.path', req.path)
         let result = handleRoute(req.path);
         if (result) {
-            let html = ReactDOMServer.renderToStaticMarkup(<Html js='bundle.js' css='/style.css' body={result} />);
+            var renderedResult = ReactDOMServer.renderToString(result);
+            let html = ReactDOMServer.renderToStaticMarkup(
+                <Html js='bundle.js' css='/style.css' body={renderedResult} />
+            );
 
             res.send('<!doctype html>\n' + html);
         } else {
