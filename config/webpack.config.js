@@ -5,6 +5,8 @@ module.exports = {
         path: __dirname + "/../build",
         filename: "bundle.js"
     },
+    debug: true,
+    devtool: 'cheap-source-map',
     module: {
         loaders: [
             {

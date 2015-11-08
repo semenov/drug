@@ -1,4 +1,7 @@
 import polyfill from 'babel-polyfill';
+import { install } from 'source-map-support';
+install();
+
 
 import express from 'express';
 import path from 'path';
