@@ -7,6 +7,7 @@ var compiler = webpack(config);
 compiler.run(function(err, stats) {
     if (err) {
         console.log(err);
+        process.exit(1);
     } else {
         console.log('Webpack OK');
     }
