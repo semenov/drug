@@ -20,7 +20,8 @@ module.exports = {
                 exclude: /(node_modules)/,
                 loader: 'babel',
                 query: {
-                    presets: ['react', 'stage-0', 'es2015'],
+                    optional: ['runtime'],
+                    stage: 0,
                     cacheDirectory: true
                 }
             },
