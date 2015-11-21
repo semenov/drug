@@ -24,6 +24,7 @@
     "lodash": "^3.10.1",
     "nodemon": "^1.8.1",
     "postcss-loader": "^0.7.0",
+    "redux-devtools": "^2.1.5",
     "source-map-support": "^0.3.3",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.2",
@@ -34,6 +35,8 @@
     "express": "^4.13.3",
     "react": "^0.14.2",
     "react-dom": "^0.14.2",
+    "react-redux": "^4.0.0",
+    "redux": "^3.0.4",
     "routr": "^0.1.3"
   }
 }
