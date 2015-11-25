@@ -1,7 +1,7 @@
 {
   "name": "drug",
   "version": "0.0.1",
-  "description": "",
+  "description": "Isomorphic web framework for React and Redux",
   "main": "index.js",
   "scripts": {
     "start": "node build/server.js",
@@ -12,7 +12,15 @@
     "clean": "rm -R build",
     "dev": "nodemon --exec 'npm run build && npm start'"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/semenov/drug.git"
+  },
+  "bugs": {
+    "url": "https://github.com/semenov/drug/issues"
+  },
+  "homepage": "https://github.com/semenov/drug/",
+  "author": "Vlad Semenov",
   "license": "ISC",
   "devDependencies": {
     "babel-core": "^5.8.33",
