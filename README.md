@@ -1,22 +1,22 @@
-Изоморфный веб фреймфорк на базе Реакта, работающий из коробки.
+Isomorphic web framework for React and Redux.
 
-Основные принципы:
-- Convention over configuration. Все работает из коробки.
-- Основной прицел на SPA и изоморфные приложения.
-- Компоненты диспатчат эвенты.
-- Эвенты обрабатываются в диспетчере.
-- Диспетчер — отдельная сущность. Хэшмэп, где ключ эвент, значение — обработчик.
-- Обработчик эвента генерит новый стейт и возвращает его.
-- Стейт иммутабельный и один на приложение.
-- Стейт целиком пробрасывается в корневой компонет, его части пробрасываются в дочерние в виде props.
-- Каждый компонент должен иметь доступ к контексту, через котрый он будет общаться с внешним миром.
-- Контекст как минимум должен уметь диспатчить сообщения, строить урлы.
-- Контекст на первом этапе реализован через реактовский контекст.
-- Вся асинхронщина реализована через промисы
+Basic principles:
+- Convention over configuration. Everything is working out of the box.
+- Targeted on buildin SPA and isomorphic applications.
+- Components dispatch events.
+- Events are processed in dispatcher.
+- Dispatcher is an independent entity. It's a hashmap, where the key is an event name, the value is a handler. 
+- Event handler (action) generates a new app state.
+- State is immutable, one instane of the app has only one state.
+- Sate is passed into the root component, it's parts are passed to child components as props.
+- Each component has an access to the context, components use it to interact with the outer world.
+- Context is able to dipathc message and construct app urls.
+- App context is implemented using React context. 
+- All async task are implemented using promises.
 
-Генератор проектов:
-- Устанавливается глобально
-- Идет на гитхаб и вытягивает шаблон нового проекта `drug init` или `drug create my-app`
-- При генерации проекта можно задать версию, которую хочешь создать
-- Шаблоны генераторов комнонетов и других сущностей находятся в отдельной папке, их можно модифицировать
+Project generator (`drug-cli`):
+- Is installed globally.
+- Fetches the template of a new project from GitHub (`drug init` or `drug create my-app`) 
+- It is possible to specify the version of app template you wish to create project from.
+- Templates of the generators are in the project folder, you can customize them.
 
