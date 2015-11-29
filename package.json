@@ -41,8 +41,10 @@
   "dependencies": {
     "babel-polyfill": "^6.0.16",
     "express": "^4.13.3",
+    "history": "^1.13.1",
     "immutable": "^3.7.5",
     "isomorphic-fetch": "^2.2.0",
+    "normalize.css": "^3.0.3",
     "react": "^0.14.2",
     "react-dom": "^0.14.2",
     "react-redux": "^4.0.0",

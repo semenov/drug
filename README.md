@@ -20,3 +20,5 @@ Project generator (`drug-cli`):
 - It is possible to specify the version of app template you wish to create project from.
 - Templates of the generators are in the project folder, you can customize them.
 
+
+url -> action -> state -> vdom
