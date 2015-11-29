@@ -7,22 +7,16 @@ export default {
         path: '/',
         method: 'get',
         handler: () => {
-            return <div>Home</div>;
+            let state = {};
+            return <App state={state} />;
         }
     },
 
     hello: {
-        path: '/hello',
+        path: '/hello/:name',
         method: 'get',
         handler: () => {
             return <div>Hello!</div>;
-        }
-    },
-    app: {
-        path: '/app',
-        method: 'get',
-        handler: () => {
-            return <App />;
         }
     }
 }

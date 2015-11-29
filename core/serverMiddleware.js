@@ -4,7 +4,7 @@ import ReactDOMServer from 'react-dom/server';
 export default function middlewareConstructor(router, rootComponent) {
     function serverMiddleware(req, res, next) {
         try {
-            console.log('req.path', req.path)
+            console.log('HTTP REQUEST', req.path);
             let route = router.getRoute(req.path);
             if (route) {
                 let result = route.config.handler();

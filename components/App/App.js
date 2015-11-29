@@ -1,8 +1,12 @@
 import React from 'react';
+import Link from '../Link/Link';
 import styles from './App.css';
 
 export default function App(props) {
     return (
-        <h1 className={styles.title}>App component</h1>
+        <div className={styles.container}>
+            <h1 className={styles.title}>App component</h1>
+            <Link route="hello" params={{ name: 'Bro' }}>Go to hello</Link>
+        </div>
     );
 }

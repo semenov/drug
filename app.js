@@ -1,3 +1,1 @@
-let hello = (name) => `Hello, ${name}`;
-
-console.log(hello('bro'));
+import history from './history'
