@@ -3,6 +3,7 @@ import { install } from 'source-map-support';
 install();
 
 import express from 'express';
+import morgan from 'morgan';
 import path from 'path';
 import Root from './components/Root/Root';
 import serverMiddleware from './core/serverMiddleware';
@@ -13,6 +14,7 @@ const server = express();
 
 server.use(express.static(path.join(__dirname, 'public')));
 server.use(express.static(path.join(__dirname, 'build')));
+server.use(morgan('dev'));
 
 server.get('*', serverMiddleware(router, Root));
 
