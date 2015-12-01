@@ -9,15 +9,17 @@ import Root from './components/Root/Root';
 import serverMiddleware from './core/serverMiddleware';
 import config from './config/config';
 import router from './router';
+import http from 'http';
 
-const server = express();
+const app = express();
 
-server.use(express.static(path.join(__dirname, 'public')));
-server.use(express.static(path.join(__dirname, 'build')));
-server.use(morgan('dev'));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'build')));
+app.use(morgan('dev'));
 
-server.get('*', serverMiddleware(router, Root));
+app.get('*', serverMiddleware(router, Root));
 
-server.listen(config.server.port, () => {
+var server = http.createServer(app);
+server.listen(config.server.port, '0.0.0.0', null, () => {
     console.log('The server is running at http://localhost:' + config.server.port);
 });

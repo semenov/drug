@@ -4,9 +4,6 @@ import router from './router';
 
 let history = createHistory();
 
-
-
-
 history.listen(location => {
     console.log(location.pathname);
     const appContainer = document.getElementById('app');
