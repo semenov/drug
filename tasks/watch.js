@@ -21,20 +21,6 @@ function start() {
 }
 
 function run() {
-
-    //clientCompiler.watch({}, function (err, stats) {
-    //    if (err) {
-    //        console.log(err.toString());
-    //    } else {
-    //        console.log('Client Webpack OK');
-    //        console.log(stats.toString({
-    //            colors: true,
-    //            chunks: false
-    //        }));
-    //    }
-    //
-    //});
-
     serverCompiler.watch({}, function (err, stats) {
         if (err) {
             console.log(err.toString());
@@ -51,6 +37,19 @@ function run() {
             } else {
                 start();
             }
+        }
+
+    });
+
+    clientCompiler.watch({}, function (err, stats) {
+        if (err) {
+            console.log(err.toString());
+        } else {
+            console.log('Client Webpack OK');
+            console.log(stats.toString({
+                colors: true,
+                chunks: false
+            }));
         }
 
     });

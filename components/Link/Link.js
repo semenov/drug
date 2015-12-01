@@ -15,8 +15,8 @@ class Link extends Component {
     _navigate = (e) => {
         e.preventDefault();
         console.log('Clicked Link component', this._url);
-        //let history = require('../../history');
-        //history.push(this._url);
+        let history = require('../../history');
+        history.push(this._url);
     };
 
     render() {
