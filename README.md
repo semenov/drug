@@ -22,3 +22,6 @@ Project generator (`drug-cli`):
 
 
 url -> action -> state -> vdom
+
+Style guide: https://github.com/ghengeveld/react-redux-styleguide
+
