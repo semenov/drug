@@ -25,3 +25,5 @@ url -> action -> state -> vdom
 
 Style guide: https://github.com/ghengeveld/react-redux-styleguide
 
+Open questions: action naming.
+

@@ -61,6 +61,8 @@
     "react-redux": "^4.0.0",
     "redux": "^3.0.4",
     "redux-actions": "^0.8.0",
+    "redux-logger": "^2.1.1",
+    "redux-promise": "^0.5.0",
     "reselect": "^2.0.1",
     "routr": "^0.1.3"
   }

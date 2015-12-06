@@ -4,10 +4,10 @@ const api = express();
 
 api.get('/lists', (req, res) => {
     let result = {
-        lists: [
+        data: [
             {
                 id: 1,
-                name: 'Personal' 
+                name: 'Personal'
             },
             {
                 id: 2,
@@ -20,7 +20,7 @@ api.get('/lists', (req, res) => {
 
 api.get('/lists/:id', (req, res) => {
     let result = {
-        list: {
+        data: {
             name: 'Personal',
             tasks: [
                 {
