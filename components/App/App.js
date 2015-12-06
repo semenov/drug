@@ -5,11 +5,10 @@ import styles from './App.css';
 
 export default function App(props) {
     let content;
-    console.log(props.state.toJS());
     if (props.state.get('lists')) {
         content = <ul>
             {
-                props.state.get('lists').toJS()/*.map(item => <li>{item.name}</li>)*/
+                props.state.get('lists').map(item => <li key={item.get('id')}>{item.get('name')}</li>)
             }
         </ul>
     }

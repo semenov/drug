@@ -4,13 +4,13 @@ import router from './router';
 
 let history = createHistory();
 
-history.listen(location => {
+history.listen(async location => {
     console.log(location.pathname);
     const appContainer = document.getElementById('app');
 
     let route = router.getRoute(location.pathname);
     if (route) {
-        let result = route.config.handler();
+        let result = await route.config.handler();
         ReactDOM.render(result, appContainer, () => {
             console.log('App rendered');
         });

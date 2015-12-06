@@ -14,13 +14,13 @@ const logger = createLogger({
     }
 });
 
-let createStoreWithMiddleware = applyMiddleware(promise, logger)(createStore);
+let createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 export default {
     home: {
         path: '/',
         method: 'get',
-        handler: () => {
+        handler: async () => {
             let store = createStoreWithMiddleware(reducers);
             let state = store.getState();
             return <App state={state} />;
@@ -30,11 +30,12 @@ export default {
     lists: {
         path: '/lists',
         method: 'get',
-        handler: () => {
+        handler: async () => {
             let store = createStoreWithMiddleware(reducers);
-            store.dispatch(setLists());
+            let d = await store.dispatch(setLists());
+            console.log({d});
             let state = store.getState();
-            console.log(state.toJS());
+            console.log('new state', state.toJS());
             return <App state={state} />;
         }
     },
@@ -42,7 +43,7 @@ export default {
     list: {
         path: '/lists/:id',
         method: 'get',
-        handler: () => {
+        handler: async () => {
             let store = createStoreWithMiddleware(reducers);
             store.dispatch(setCurrentList(1));
             let state = store.getState();
@@ -53,7 +54,7 @@ export default {
     hello: {
         path: '/hello/:name',
         method: 'get',
-        handler: () => {
+        handler: async () => {
             return <div>Hello, bra!</div>;
         }
     }

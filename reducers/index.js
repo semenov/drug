@@ -11,8 +11,7 @@ export default handleActions({
 }, initialState);
 
 export function setLists(state, action) {
-    console.log(action.payload, state.set('lists', action.payload).toJS());
-    return state.set('lists', action.payload);
+    return state.set('lists', Immutable.fromJS(action.payload));
 }
 
 export function setCurrentList(state, action) {
