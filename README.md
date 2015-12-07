@@ -27,3 +27,7 @@ Style guide: https://github.com/ghengeveld/react-redux-styleguide
 
 Open questions: action naming.
 
+### TODO:
+- Add live preview of components with demo data
+
+
