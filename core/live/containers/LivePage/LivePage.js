@@ -4,9 +4,10 @@ import ComponentList from '../../components/ComponentList/ComponentList';
 
 export default function LivePage(props) {
     let activeComponent;
-    if (props.activeComponentName) {
-        let ActiveComponent = props.components[props.activeComponentName];
-        activeComponent = <ActiveComponent />;
+    if (props.componentName) {
+        let ActiveComponent = props.components[props.componentName];
+        let activeProps = ActiveComponent.propDemos[props.demoName];
+        activeComponent = <ActiveComponent {...activeProps} />;
     } else {
         activeComponent = <div>Choose component for preview</div>;
     }

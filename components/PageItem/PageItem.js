@@ -4,7 +4,18 @@ import style from './PageItem.css';
 export default function PageItem(props) {
     return (
         <div className={style.container}>
-            Important things
+            {props.name}
         </div>
     );
 }
+
+PageItem.propDemos = {
+    simple: {
+        id: 1,
+        name: 'Important things'
+    },
+    long: {
+        id: 1,
+        name: 'Very long and informative name with many words'
+    }
+};

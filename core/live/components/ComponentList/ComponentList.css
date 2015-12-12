@@ -4,9 +4,19 @@
 }
 
 .component {
+
+}
+
+.name {
+    color: #DDD;
+}
+
+.demo {
     display: block;
     color: #FFF;
     text-decoration: none;
+    font-style: italic;
+    margin-left: 20px;
 }
 
 .components {

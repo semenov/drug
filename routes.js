@@ -62,11 +62,12 @@ export default {
     },
 
     live: {
-        path: '/live/:component?',
+        path: '/live/:component?/:demo?',
         method: 'get',
         handler: async (req) => {
-            let activeComponentName = req.params.component;
-            return <LivePage components={components} activeComponentName={activeComponentName} />;
+            let componentName = req.params.component;
+            let demoName = req.params.demo;
+            return <LivePage components={components} componentName={componentName} demoName={demoName} />;
         }
     }
 }
