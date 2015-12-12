@@ -10,7 +10,7 @@ history.listen(async location => {
 
     let route = router.getRoute(location.pathname);
     if (route) {
-        let result = await route.config.handler();
+        let result = await route.config.handler(route);
         ReactDOM.render(result, appContainer, () => {
             console.log('App rendered');
         });

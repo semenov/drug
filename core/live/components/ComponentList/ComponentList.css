@@ -1,0 +1,14 @@
+.header {
+    text-transform: uppercase;
+    color: #DDD;
+}
+
+.component {
+    display: block;
+    color: #FFF;
+    text-decoration: none;
+}
+
+.components {
+    padding: 15px 0;
+}

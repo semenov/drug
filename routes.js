@@ -7,6 +7,8 @@ import reducers from './reducers';
 import { setLists, setCurrentList } from './actions/lists';
 import promise from 'redux-promise';
 import createLogger from 'redux-logger';
+import LivePage from './core/live/containers/LivePage/LivePage';
+import components from './components';
 
 const logger = createLogger({
     stateTransformer: (state) => {
@@ -56,6 +58,15 @@ export default {
         method: 'get',
         handler: async () => {
             return <div>Hello, bra!</div>;
+        }
+    },
+
+    live: {
+        path: '/live/:component?',
+        method: 'get',
+        handler: async (req) => {
+            let activeComponentName = req.params.component;
+            return <LivePage components={components} activeComponentName={activeComponentName} />;
         }
     }
 }

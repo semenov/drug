@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    min-height: 100vh;
+    height: 100%;
+}
+
+.menu {
+    color: #FFF;
+    background-color: #555;
+    min-width: 250px;
+    padding: 20px;
+}
+
+.preview {
+    padding: 20px;
+    background-color: #EEE;
+    flex-grow: 1;
+}
+
+html{
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+:global #app {
+    min-height: 100%;
+}

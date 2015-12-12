@@ -6,7 +6,7 @@ export default function middlewareConstructor(router, rootComponent) {
         try {
             let route = router.getRoute(req.path);
             if (route) {
-                let result = await route.config.handler();
+                let result = await route.config.handler(route);
                 let renderedResult = ReactDOMServer.renderToString(result);
                 let document = React.createElement(rootComponent, { body: renderedResult });
                 let html = ReactDOMServer.renderToStaticMarkup(document);
