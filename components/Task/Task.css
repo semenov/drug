@@ -1,0 +1,11 @@
+.container {
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: #FFF;
+    margin: 20px;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+}

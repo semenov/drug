@@ -15,7 +15,7 @@ PageItem.propTypes = {
 };
 
 PageItem.propDemos = {
-    standard: {
+    default: {
         id: 1,
         name: 'Important things'
     },

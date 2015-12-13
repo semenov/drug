@@ -17,7 +17,7 @@ PageItemList.propTypes = {
 };
 
 PageItemList.propDemos = {
-    standard: {
+    default: {
         pages: [
             {
                 id: 1,
