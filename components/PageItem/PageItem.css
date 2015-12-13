@@ -1,9 +1,17 @@
 .container {
+    box-sizing: border-box;
     width: 150px;
     height: 200px;
     padding: 10px;
     background-color: #FFF;
+    border: 1px solid #DDD;
     font-family: sans-serif;
     display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
     margin: 20px;
+}
+
+.container:hover {
+    background-color: #ffffeb;
 }
