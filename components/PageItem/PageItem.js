@@ -9,8 +9,13 @@ export default function PageItem(props) {
     );
 }
 
+PageItem.propTypes = {
+    id: React.PropTypes.number.isRequired,
+    name: React.PropTypes.string.isRequired
+};
+
 PageItem.propDemos = {
-    simple: {
+    standard: {
         id: 1,
         name: 'Important things'
     },

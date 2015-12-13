@@ -53,6 +53,7 @@
     "history": "^1.13.1",
     "immutable": "^3.7.5",
     "isomorphic-fetch": "^2.2.0",
+    "lodash": "^3.10.1",
     "memory-fs": "^0.3.0",
     "morgan": "^1.6.1",
     "normalize.css": "^3.0.3",
