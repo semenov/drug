@@ -1,14 +1,19 @@
+.container {
+    font-family: ‘Lucida Sans Unicode’, ‘Lucida Grande’, sans-serif;
+    font-size: 14px;
+    font-weight: lighter;
+}
+
 .header {
     text-transform: uppercase;
     color: #DDD;
-}
-
-.component {
-
+    font-weight: normal;
 }
 
 .name {
     color: #DDD;
+    padding-top: 10px;
+    font-weight: normal;
 }
 
 .demo {
@@ -17,6 +22,10 @@
     text-decoration: none;
     font-style: italic;
     margin-left: 20px;
+}
+
+.demo:hover {
+    text-decoration: underline;
 }
 
 .components {

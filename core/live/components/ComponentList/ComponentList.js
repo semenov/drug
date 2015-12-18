@@ -20,7 +20,7 @@ function makeComponentItem(name, component) {
 export default function ComponentList(props) {
     let components = props.components || {};
     return (
-        <div>
+        <div className={style.container}>
             <div className={style.header}>Components</div>
             <div className={style.components}>
                 {
