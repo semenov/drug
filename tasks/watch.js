@@ -1,4 +1,5 @@
 var webpack = require('webpack');
+var WebpackDevServer = require("webpack-dev-server");
 var http = require('http');
 var spawn = require('child_process').spawn;
 var MemoryFS = require('memory-fs');
@@ -41,17 +42,21 @@ function run() {
 
     });
 
-    clientCompiler.watch({}, function (err, stats) {
-        if (err) {
-            console.log(err.toString());
-        } else {
-            console.log('Client Webpack OK');
-            console.log(stats.toString({
-                colors: true,
-                chunks: false
-            }));
+    var devServer = new WebpackDevServer(clientCompiler, {
+        hot: false,
+        proxy: {
+            "*": "http://localhost:3000"
+        },
+        quiet: false,
+        noInfo: false,
+        stats: {
+            colors: true,
+            chunks: false
         }
+    });
 
+    devServer.listen(8080, '0.0.0.0', null, () => {
+        console.info('Dev server is running at http://localhost:8080');
     });
 
 }

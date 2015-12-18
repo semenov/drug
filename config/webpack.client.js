@@ -3,6 +3,9 @@ var clone = require('clone');
 
 config = clone(config);
 
-config.entry = './app';
+config.entry = [
+    './app',
+    'webpack-dev-server/client?http://localhost:8080'
+];
 
 module.exports = config;
