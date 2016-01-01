@@ -1,0 +1,36 @@
+.container {
+    display: flex;
+}
+
+.title {
+    font-size: 22px;
+}
+
+.rating {
+    margin-bottom: 10px;
+}
+
+.brand {
+
+}
+
+.name {
+    color: #333333;
+    font-style: italic;
+}
+
+.rating {
+
+}
+
+.info {
+    flex-grow: 1;
+}
+
+.additional {
+    width: 200px;
+}
+
+.image {
+    width: 200px;
+}

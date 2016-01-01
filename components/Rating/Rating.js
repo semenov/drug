@@ -10,10 +10,12 @@ function Rating(props) {
         stars.push(star);
     }
 
+    let rating = props.rating > 0 ? props.rating : 'Нет оценок';
+
     return (
         <div className={style.container}>
             {stars}
-            <span className={style.number}>{props.rating}</span>
+            <span className={style.number}>{rating}</span>
         </div>
     );
 }
@@ -31,6 +33,9 @@ Rating.propDemos = {
     },
     one: {
         rating: 1
+    },
+    zero: {
+        rating: 0
     }
 };
 
