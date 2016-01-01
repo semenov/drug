@@ -1,0 +1,14 @@
+.container {
+    background-color: white;
+}
+
+.title {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.count {
+    font-size: 12px;
+    color: gray;
+    margin-left: 5px;
+}

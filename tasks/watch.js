@@ -1,8 +1,6 @@
 var webpack = require('webpack');
-var WebpackDevServer = require("webpack-dev-server");
 var http = require('http');
 var spawn = require('child_process').spawn;
-var MemoryFS = require('memory-fs');
 
 var clientConfig = require('../config/webpack.client');
 var serverConfig = require('../config/webpack.server');

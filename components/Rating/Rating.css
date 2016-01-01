@@ -1,0 +1,15 @@
+.container {
+    background-color: white;
+}
+
+.active {
+    color: red;
+}
+
+.inactive {
+    color: darkgray;
+}
+
+.number {
+    margin-left: 5px;
+}

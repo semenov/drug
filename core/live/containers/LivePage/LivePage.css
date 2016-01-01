@@ -13,16 +13,22 @@
 
 .preview {
     padding: 20px;
-    background-color: #333;
-    background-image:
-            linear-gradient(rgba(119, 119, 119, 0.5) 1px, transparent 1px),
-            linear-gradient(#777 1px, transparent 1px),
-            linear-gradient(90deg, rgba(119, 119, 119, 0.5) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(119, 119, 119, 0.7) 1px, transparent 1px),
-            linear-gradient(transparent 3px, #333 3px, #333 58px, transparent 58px),
-            linear-gradient(90deg, rgba(119, 119, 119, 0.7) 3px, transparent 3px, transparent 58px, rgba(119, 119, 119, 0.7) 58px);
-    background-size: 15px 15px, 60px 60px, 15px 15px, 60px 60px, 60px 60px, 60px 60px;
+    background-color: white;
     flex-grow: 1;
+    /*background-color: #333;*/
+    /*background-image:*/
+            /*linear-gradient(rgba(119, 119, 119, 0.5) 1px, transparent 1px),*/
+            /*linear-gradient(#777 1px, transparent 1px),*/
+            /*linear-gradient(90deg, rgba(119, 119, 119, 0.5) 1px, transparent 1px),*/
+            /*linear-gradient(90deg, rgba(119, 119, 119, 0.7) 1px, transparent 1px),*/
+            /*linear-gradient(transparent 3px, #333 3px, #333 58px, transparent 58px),*/
+            /*linear-gradient(90deg, rgba(119, 119, 119, 0.7) 3px, transparent 3px, transparent 58px, rgba(119, 119, 119, 0.7) 58px);*/
+    /*background-size: 15px 15px, 60px 60px, 15px 15px, 60px 60px, 60px 60px, 60px 60px;*/
+}
+
+.preview > * {
+    border: 1px dotted gray;
+    margin: 0 !important;
 }
 
 html{
