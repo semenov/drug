@@ -1,0 +1,32 @@
+:global .rsr-root {
+    vertical-align: middle;
+    display: inline-block; }
+
+:global .rsr--editing:hover {
+    cursor: pointer; }
+
+:global .rsr {
+    position: relative;
+    vertical-align: middle;
+    display: inline-block;
+    color: #e3e3e3;
+    overflow: hidden; }
+
+:global .rsr__stars {
+    position: absolute;
+    left: 0;
+    top: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    color: #F5A71B;
+    -webkit-transition: all 0.01s;
+    -moz-transition: all 0.01s;
+    transition: all 0.01s; }
+
+:global .rsr__caption {
+    font-size: 1.25em;
+    vertical-align: middle;
+    margin-right: 0.5em; }
+
+:global .rsr--disabled .rsr-container:hover {
+    cursor: not-allowed; }
