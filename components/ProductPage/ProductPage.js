@@ -3,12 +3,14 @@ import style from './ProductPage.css';
 import repeat from 'lodash/string/repeat';
 import Product from '../Product/Product';
 import ReviewList from '../ReviewList/ReviewList';
+import ReviewForm from '../ReviewForm/ReviewForm';
 
 function ProductPage(props) {
     return (
         <div className={style.container}>
             <Product {...props.product} />
             <ReviewList reviews={props.reviews} />
+            <ReviewForm />
         </div>
     );
 }

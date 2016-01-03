@@ -5,7 +5,7 @@ import StarRating from '../StarRating/StarRating';
 
 function RatingControl(props) {
     return (
-        <StarRating rating={props.rating} totalStars={10} editing={true} size={20} />
+        <StarRating rating={props.rating} totalStars={10} editing={true} size={16} />
     );
 }
 

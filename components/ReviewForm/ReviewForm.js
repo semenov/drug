@@ -11,6 +11,7 @@ function ReviewForm(props) {
                 <RatingControl rating={props.rating} />
             </div>
             <textarea className={style.text} value={props.text} />
+            <button className={style.submit}>Отправить</button>
         </div>
     );
 }

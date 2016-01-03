@@ -1,20 +1,14 @@
 import React from 'react';
 import style from './Rating.css';
 import repeat from 'lodash/string/repeat';
+import StarRating from '../StarRating/StarRating';
 
 function Rating(props) {
-    let stars = [];
-    for (var i = 0; i < 10; i++) {
-        let starStyle = i < props.rating ? style.active : style.inactive;
-        let star = <span className={starStyle}>★</span>;
-        stars.push(star);
-    }
-
     let rating = props.rating > 0 ? props.rating : 'Нет оценок';
 
     return (
         <div className={style.container}>
-            {stars}
+            <StarRating rating={props.rating} totalStars={10} size={16} />
             <span className={style.number}>{rating}</span>
         </div>
     );
