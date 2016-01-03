@@ -6,6 +6,9 @@ import Rating from '../Rating/Rating';
 function Product(props) {
     return (
         <div className={style.container} key={props.id}>
+            <div className={style.additional}>
+                <img className={style.image} src={props.image} />
+            </div>
             <div className={style.info}>
                 <div className={style.title}>
                     <span className={style.brand}>{props.brand}</span>
@@ -17,9 +20,6 @@ function Product(props) {
                 </div>
                 <div className={style.description}>{props.description}</div>
             </div>
-            <div className={style.additional}>
-                <img className={style.image} src={props.image} />
-            </div>
         </div>
     );
 }
@@ -29,6 +29,7 @@ Product.propTypes = {
     image: React.PropTypes.string,
     brand: React.PropTypes.string,
     name: React.PropTypes.string,
+    rating: React.PropTypes.number,
     description: React.PropTypes.string
 };
 

@@ -8,6 +8,8 @@ import ReviewForm from './ReviewForm/ReviewForm';
 import Rating from './Rating/Rating';
 import RatingControl from './RatingControl/RatingControl';
 import Product from './Product/Product';
+import ProductItem from './ProductItem/ProductItem';
+import ProductList from './ProductList/ProductList';
 import ProductPage from './ProductPage/ProductPage';
 
 export default {
@@ -17,5 +19,7 @@ export default {
     Rating,
     RatingControl,
     Product,
+    ProductItem,
+    ProductList,
     ProductPage
 };
