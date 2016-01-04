@@ -14,14 +14,14 @@ import ProductList from './ProductList/ProductList';
 import ProductPage from './ProductPage/ProductPage';
 
 export default {
-    Review,
-    ReviewList,
-    ReviewForm,
-    Rating,
-    RatingControl,
     Product,
     ProductForm,
     ProductItem,
     ProductList,
-    ProductPage
+    ProductPage,
+    Review,
+    ReviewList,
+    ReviewForm,
+    Rating,
+    RatingControl
 };
