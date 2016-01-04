@@ -25,7 +25,7 @@ ReviewForm.propTypes = {
 ReviewForm.propDemos = {
     default: {
         id: 1,
-        rating: 10,
+        rating: 0,
         text: 'Awesome vape'
     },
     worst: {
