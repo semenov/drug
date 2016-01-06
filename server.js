@@ -4,6 +4,7 @@ install();
 
 import express from 'express';
 import morgan from 'morgan';
+import bodyParser from 'body-parser';
 import path from 'path';
 import Root from './components/Root/Root';
 import serverMiddleware from './core/serverMiddleware';
@@ -17,7 +18,8 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'build')));
 app.use(morgan('dev'));
-app.use('/api', api);
+app.use(bodyParser.json());
+app.use('/api/', api);
 
 app.get('*', serverMiddleware(router, Root));
 

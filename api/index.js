@@ -1,42 +1,49 @@
 import express from 'express';
+import methods from './methods';
 
 const api = express();
 
-api.get('/lists', (req, res) => {
-    let result = {
-        data: [
-            {
-                id: 1,
-                name: 'Personal'
-            },
-            {
-                id: 2,
-                name: 'Work'
-            }
-        ]
-    };
-    res.json(result);
-});
+function parseMethodPath(methodPath: string): Array<string> {
+    return methodPath.split('.');
+}
 
-api.get('/lists/:id', (req, res) => {
-    let result = {
-        data: {
-            name: 'Personal',
-            tasks: [
-                {
-                    id: 1,
-                    text: 'Buy groceries',
-                    done: false
-                },
-                {
-                    id: 2,
-                    text: 'Wash the car',
-                    done: true
-                }
-            ]
+async function callMethod(methods: Object, methodPath: string, params: Object) {
+    const parsedMethodPath = parseMethodPath(methodPath);
+    let object = methods;
+    parsedMethodPath.forEach((name) => {
+        object = object[name];
+        if (!object) {
+            throw new Error('Method not found');
         }
-    };
-    res.json(result);
+    });
+
+    return await object.call(null, params);
+}
+
+async function getHttpResponse(methods: Object, methodPath: string, params: Object) {
+    try {
+        const result = await callMethod(methods, methodPath, params);
+        return {
+            status: 'ok',
+            data: result
+        };
+    } catch (e) {
+        console.log({e});
+        return {
+            status: 'error',
+            message: e.message
+        };
+    }
+}
+
+api.get('*', (req, res) => {
+    const method = req.path.slice(1);
+    const params = req.body;
+
+    getHttpResponse(methods, method, params).then(response => {
+        res.json(response);
+    });
+
 });
 
 
