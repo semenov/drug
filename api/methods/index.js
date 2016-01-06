@@ -1,5 +1,7 @@
 import products from './products';
+import reviews from './reviews';
 
 export default {
-  products
+    products,
+    reviews
 };
