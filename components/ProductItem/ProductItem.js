@@ -2,16 +2,20 @@ import React from 'react';
 import style from './ProductItem.css';
 import repeat from 'lodash/string/repeat';
 import Rating from '../Rating/Rating';
+import Link from '../Link/Link';
 
 function ProductItem(props) {
+    // <Link route="hello" params={{ name: 'Bro' }}>Go to hello</Link>
     return (
         <div className={style.container} key={props.id}>
-            <img className={style.image} src={props.image} />
-            <div className={style.title}>
-                <span className={style.brand}>{props.brand}</span>
-                &nbsp;
-                <span className={style.name}>{props.name}</span>
-            </div>
+            <Link route="product" params={{ id: 1 }}>
+                <img className={style.image} src={props.image} />
+                <div className={style.title}>
+                    <span className={style.brand}>{props.brand}</span>
+                    &nbsp;
+                    <span className={style.name}>{props.name}</span>
+                </div>
+            </Link>
             <div className={style.rating}>
                 <Rating rating={props.rating} />
             </div>

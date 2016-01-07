@@ -1,19 +1,25 @@
-import Immutable from 'immutable';
 import { handleActions } from 'redux-actions';
 
-let initialState = Immutable.fromJS({
+let initialState = {
     moto: 'Yo, bro!'
-});
+};
 
 export default handleActions({
-    'LISTS_SET': setLists,
-    'CURRENT_LIST_SET': setCurrentList
+    'PRODUCTS_SET': setProducts,
+    'CURRENT_PRODUCT_SET': setCurrentProduct
 }, initialState);
 
-export function setLists(state, action) {
-    return state.set('lists', Immutable.fromJS(action.payload));
+export function setProducts(state, action) {
+    return {
+        pageType: 'products',
+        products: action.payload,
+        ...state};
 }
 
-export function setCurrentList(state, action) {
-    return state.set('currentList', action.payload);
+export function setCurrentProduct(state, action) {
+    return {
+        pageType: 'product',
+        product: action.payload,
+        ...state
+    };
 }

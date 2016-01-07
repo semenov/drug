@@ -36,7 +36,7 @@ async function getHttpResponse(methods: Object, methodPath: string, params: Obje
     }
 }
 
-api.get('*', (req, res) => {
+api.all('*', (req, res) => {
     const method = req.path.slice(1);
     const params = req.body;
 

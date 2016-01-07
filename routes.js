@@ -4,19 +4,25 @@ import Immutable from 'immutable';
 import { createStore, applyMiddleware } from 'redux';
 import App from './components/App/App';
 import reducers from './reducers';
-import { setLists, setCurrentList } from './actions/lists';
+import { setProducts, setCurrentProduct } from './actions/products';
 import promise from 'redux-promise';
 import createLogger from 'redux-logger';
 import LivePage from './core/live/containers/LivePage/LivePage';
 import components from './components';
 
-const logger = createLogger({
-    stateTransformer: (state) => {
-        return state.toJS();
-    }
-});
+//const logger = createLogger({
+//    stateTransformer: (state) => {
+//        return state.toJS();
+//    }
+//});
 
 let createStoreWithMiddleware = applyMiddleware(promise)(createStore);
+
+async function makeState(action) {
+    let store = createStoreWithMiddleware(reducers);
+    await store.dispatch(action);
+    return store.getState();
+}
 
 export default {
     home: {
@@ -29,37 +35,49 @@ export default {
         }
     },
 
-    lists: {
-        path: '/lists',
+    products: {
+        path: '/products',
         method: 'get',
         handler: async () => {
-            let store = createStoreWithMiddleware(reducers);
-            let d = await store.dispatch(setLists());
-            console.log({d});
-            let state = store.getState();
-            console.log('new state', state.toJS());
+            const state = await makeState(setProducts());
+            console.log('new state', state);
             return <App state={state} />;
         }
     },
 
-    list: {
-        path: '/lists/:id',
+    product: {
+        path: '/products/:id',
         method: 'get',
-        handler: async () => {
-            let store = createStoreWithMiddleware(reducers);
-            store.dispatch(setCurrentList(1));
-            let state = store.getState();
+        handler: async (req) => {
+            const id = req.params.id;
+            let state = await makeState(setCurrentProduct(id));
+            console.log('new state', state);
             return <App state={state} />;
         }
     },
-
-    hello: {
-        path: '/hello/:name',
-        method: 'get',
-        handler: async () => {
-            return <div>Hello, bra!</div>;
-        }
-    },
+    //lists: {
+    //    path: '/lists',
+    //    method: 'get',
+    //    handler: async () => {
+    //        let store = createStoreWithMiddleware(reducers);
+    //        let d = await store.dispatch(setLists());
+    //        console.log({d});
+    //        let state = store.getState();
+    //        console.log('new state', state.toJS());
+    //        return <App state={state} />;
+    //    }
+    //},
+    //
+    //list: {
+    //    path: '/lists/:id',
+    //    method: 'get',
+    //    handler: async () => {
+    //        let store = createStoreWithMiddleware(reducers);
+    //        store.dispatch(setCurrentList(1));
+    //        let state = store.getState();
+    //        return <App state={state} />;
+    //    }
+    //},
 
     live: {
         path: '/live/:component?/:demo?',

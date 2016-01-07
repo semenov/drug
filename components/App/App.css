@@ -1,7 +1,35 @@
 .container {
+    margin: 0 auto;
+    max-width: 1000px;
+    min-height: 100vh;
+    background-color: white;
+    padding: 50px 100px;
+    box-sizing: border-box;
+}
 
+body {
+    background-color: white;
+}
+
+@font-face {
+    font-family: "Intro Rust";
+    src: url("/IntroRust.otf");
 }
 
 .title {
-    color: gray;
+    font-family: "Intro Rust";
+    font-size: 60px;
+    font-weight: normal;
+    font-kerning: normal;
 }
+
+.logoLink {
+    text-decoration: none;
+    color: black;
+}
+
+.logoLink:hover {
+    color: hotpink;
+}
+
+

@@ -1,7 +1,17 @@
 .container {
-    width: 200px;
+    /*width: 200px;*/
     display: inline-block;
     padding: 10px;
+    /*box-sizing: border-box;*/
+    border-width: 2px;
+    border-style: solid;
+    border-color: white;
+}
+
+.container:hover {
+    border-width: 2px;
+    border-style: solid;
+    border-color: pink;
 }
 
 .image {
@@ -10,6 +20,8 @@
 
 .title {
     font-size: 18px;
+    color: cornflowerblue;
+    /*text-decoration: none;*/
 }
 
 .brand {
@@ -17,6 +29,5 @@
 }
 
 .name {
-    color: #333333;
     font-style: italic;
 }

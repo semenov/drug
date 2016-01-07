@@ -4,7 +4,8 @@ import router from '../../router';
 class Link extends Component {
     static propTypes = {
         route: PropTypes.string.isRequired,
-        params: PropTypes.object
+        params: PropTypes.object,
+        className: PropTypes.string
     };
 
     constructor(props) {
@@ -21,7 +22,7 @@ class Link extends Component {
 
     render() {
         return (
-            <a href={this._url} onClick={this._navigate}>{this.props.children}</a>
+            <a href={this._url} onClick={this._navigate} className={this.props.className}>{this.props.children}</a>
         );
     }
 }
